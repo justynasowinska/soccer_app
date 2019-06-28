@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainScreen matches to the snapshot 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#393551",
+      "flex": 1,
+    }
+  }
+>
+  <SafeAreaView
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "space-between",
+        "padding": 40,
+      }
+    }
+  >
+    <SessionButton
+      containerStyles={
+        Object {
+          "alignSelf": "flex-start",
+        }
+      }
+      isPaused={true}
+      onPress={[Function]}
+    />
+    <SoccerBoard
+      currentTime={0}
+    />
+    <SoccerSlider
+      currentTime={0}
+      onValueChange={[Function]}
+      totalTime={297800}
+      value={0}
+    />
+  </SafeAreaView>
+</View>
+`;

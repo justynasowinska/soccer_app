@@ -6,7 +6,7 @@ import { colors } from '../utils/colors';
 interface PropsType {
     isPaused: boolean;
     onPress: () => void;
-    containerStyles: ViewStyle;
+    containerStyles?: ViewStyle;
 }
 
 export const SessionButton = (props: PropsType) => {
@@ -16,7 +16,7 @@ export const SessionButton = (props: PropsType) => {
 
     const getIcon = (paused: boolean): string => {
         return paused ? 'play' : 'pausecircle';
-    }
+    };
 
     const { isPaused, onPress, containerStyles } = props;
 

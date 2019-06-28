@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SoccerBoard matches to the snapshot 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "aspectRatio": 2.2142286171,
+      "flex": 1,
+      "justifyContent": "center",
+      "maxWidth": "100%",
+    }
+  }
+>
+  <ImageBackground
+    resizeMode="contain"
+    source={
+      Object {
+        "testUri": "../../../assets/images/soccer.png",
+      }
+    }
+    style={
+      Object {
+        "aspectRatio": 2.2142286171,
+        "position": "relative",
+        "width": "100%",
+      }
+    }
+  >
+    <Player
+      id={13}
+      key="13"
+      x={0.211}
+      y={0.257}
+    />
+    <Player
+      id={2}
+      key="2"
+      x={0.263}
+      y={0.422}
+    />
+    <Player
+      id={5}
+      key="5"
+      x={0.336}
+      y={0.45}
+    />
+    <Player
+      id={1}
+      key="1"
+      x={0.505}
+      y={0.642}
+    />
+    <Player
+      id={15}
+      key="15"
+      x={0.479}
+      y={0.367}
+    />
+    <Player
+      id={14}
+      key="14"
+      x={0.266}
+      y={0.266}
+    />
+    <Player
+      id={7}
+      key="7"
+      x={0.399}
+      y={0.559}
+    />
+    <Player
+      id={8}
+      key="8"
+      x={0.272}
+      y={0.579}
+    />
+    <Player
+      id={9}
+      key="9"
+      x={0.307}
+      y={0.187}
+    />
+    <Player
+      id={10}
+      key="10"
+      x={0.43}
+      y={0.213}
+    />
+    <Player
+      id={12}
+      key="12"
+      x={0.71}
+      y={1.045}
+    />
+  </ImageBackground>
+</View>
+`;

@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SoccerSlider matches to the snapshot 1`] = `
+<View
+  style={
+    Object {
+      "position": "relative",
+      "width": "100%",
+    }
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "bottom": -10,
+          "color": "#F6F6F6",
+          "fontSize": 13,
+          "fontWeight": "bold",
+          "position": "absolute",
+        },
+        Object {
+          "left": 0,
+        },
+      ]
+    }
+  >
+    00:00:01
+  </Text>
+  <ForwardRef(Themed.Slider)
+    maximumTrackTintColor="rgba(255, 255, 255, 0.4)"
+    maximumValue={23454}
+    minimumTrackTintColor="#00B4CC"
+    minimumValue={0}
+    onValueChange={[MockFunction]}
+    thumbTintColor="#00B4CC"
+    thumbTouchSize={
+      Object {
+        "height": 70,
+        "width": 70,
+      }
+    }
+    value={1222}
+  />
+  <Text
+    style={
+      Array [
+        Object {
+          "bottom": -10,
+          "color": "#F6F6F6",
+          "fontSize": 13,
+          "fontWeight": "bold",
+          "position": "absolute",
+        },
+        Object {
+          "right": 0,
+        },
+      ]
+    }
+  >
+    00:00:23
+  </Text>
+</View>
+`;

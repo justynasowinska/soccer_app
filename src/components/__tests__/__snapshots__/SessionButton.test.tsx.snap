@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SessionButton matches to the snapshot 1`] = `
+<ForwardRef(Themed.Button)
+  buttonStyle={
+    Object {
+      "borderColor": "#F6F6F6",
+      "borderRadius": 50,
+      "borderWidth": 2,
+    }
+  }
+  containerStyle={
+    Array [
+      Object {
+        "marginBottom": 10,
+        "marginTop": 10,
+        "width": 200,
+      },
+      undefined,
+    ]
+  }
+  icon={
+    <Themed.Icon
+      color="#F6F6F6"
+      iconStyle={
+        Object {
+          "marginRight": 10,
+        }
+      }
+      name="play"
+      size={20}
+      type="antdesign"
+    />
+  }
+  onPress={[MockFunction]}
+  title="Run Session"
+  titleStyle={
+    Object {
+      "color": "#F6F6F6",
+      "fontSize": 15,
+    }
+  }
+  type="outline"
+/>
+`;
+
+exports[`SessionButton matches to the snapshot 2`] = `
+<ForwardRef(Themed.Button)
+  buttonStyle={
+    Object {
+      "borderColor": "#F6F6F6",
+      "borderRadius": 50,
+      "borderWidth": 2,
+    }
+  }
+  containerStyle={
+    Array [
+      Object {
+        "marginBottom": 10,
+        "marginTop": 10,
+        "width": 200,
+      },
+      undefined,
+    ]
+  }
+  icon={
+    <Themed.Icon
+      color="#F6F6F6"
+      iconStyle={
+        Object {
+          "marginRight": 10,
+        }
+      }
+      name="pausecircle"
+      size={20}
+      type="antdesign"
+    />
+  }
+  onPress={[MockFunction]}
+  title="Pause Session"
+  titleStyle={
+    Object {
+      "color": "#F6F6F6",
+      "fontSize": 15,
+    }
+  }
+  type="outline"
+/>
+`;
