@@ -12,6 +12,8 @@ interface StateType {
 }
 
 export class MainScreen extends React.Component<{}, StateType> {
+    clearInterval = 0;
+
     state: StateType = {
         isPaused: true,
         currentTime: 0,
@@ -41,15 +43,41 @@ export class MainScreen extends React.Component<{}, StateType> {
     }
 
     toggleSession = () => {
+        const { isPaused } = this.state;
+
+        if (isPaused) {
+            this.runTimer();
+        } else {
+            this.pauseTimer();
+        }
+
         this.setState({
             isPaused: !this.state.isPaused
         });
     }
 
     onSliderValueChange = (value: number) => {
+        this.pauseTimer();
+
         this.setState({
-            currentTime: value
+            currentTime: value,
+            isPaused: true
         });
+    }
+
+    runTimer = () => {
+        this.clearInterval = setInterval(() => {
+            const newTime = this.state.currentTime + 100;
+
+            this.setState({
+                currentTime: newTime,
+                sliderValue: newTime
+            });
+        }, 100);
+    }
+
+    pauseTimer = () => {
+        clearInterval(this.clearInterval);
     }
 }
 

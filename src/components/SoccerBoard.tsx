@@ -12,14 +12,6 @@ export const SoccerBoard = (props: PropsType) => {
     const playersIndex = Math.floor(props.currentTime / 100); // time interval
     const playerPostions = playersData.player_positions[playersIndex];
 
-    const countPosX = (pos: number) => {
-        return `${pos * 100}%`;
-    };
-
-    const countPosY = (pos: number) => {
-        return `${pos * 100}%`;
-    };
-
     return (
         <View style={styles.soccerBoardContainer}>
             <ImageBackground
@@ -32,8 +24,8 @@ export const SoccerBoard = (props: PropsType) => {
                         <Player
                             key={player[0]}
                             id={player[0]}
-                            x={countPosX(player[1])}
-                            y={countPosY(player[2])}
+                            x={player[1]}
+                            y={player[2]}
                         />
                     );
                 }) }

@@ -1,21 +1,34 @@
-import * as React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, StyleSheet, Animated } from 'react-native';
 
 interface PropsType {
     id: number;
-    x: string;
-    y: string;
+    x: number;
+    y: number;
 }
 
 export const Player = (props: PropsType) => {
     const { id, x, y } = props;
+    const [position] = useState(new Animated.ValueXY());
+
+    position.setValue({ x, y });
+
+    const leftPosition = position.x.interpolate({
+        inputRange: [0, 1],
+        outputRange: ['0%', '100%']
+    });
+
+    const bottomPostion = position.y.interpolate({
+        inputRange: [0, 1],
+        outputRange: ['0%', '100%']
+    });
 
     return (
-        <View style={[styles.playerContainer, { left: x, bottom: y }]}>
+        <Animated.View style={[styles.playerContainer, { left: leftPosition, bottom: bottomPostion }]}>
             <View style={styles.player}>
                 <Text style={styles.playerText}>{id}</Text>
             </View>
-        </View>
+        </Animated.View>
     );
 };
 
