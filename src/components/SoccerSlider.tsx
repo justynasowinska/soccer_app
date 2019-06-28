@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import Slider from '@react-native-community/slider';
+import { Slider } from 'react-native-elements';
 
 import { formatMsToString } from '../utils/dataUtils';
 
