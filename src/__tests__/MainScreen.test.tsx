@@ -11,4 +11,6 @@ describe('MainScreen', () => {
 
         expect(component).toMatchSnapshot();
     });
+
+    // TODO: Add more tests
 });
