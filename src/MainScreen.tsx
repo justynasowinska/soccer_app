@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { View, StyleSheet, SafeAreaView } from 'react-native';
 import { SessionButton } from './components/SessionButton';
 import { SoccerBoard } from './components/SoccerBoard';
@@ -29,6 +29,7 @@ export class MainScreen extends React.Component<{}, StateType> {
                     <SessionButton
                         isPaused={isPaused}
                         onPress={this.toggleSession}
+                        containerStyles={styles.buttonContainer}
                     />
                     <SoccerBoard currentTime={currentTime} />
                     <SoccerSlider
@@ -90,4 +91,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
     },
+    buttonContainer: {
+        alignSelf: 'flex-start',
+    }
 });

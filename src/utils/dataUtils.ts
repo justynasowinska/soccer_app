@@ -1,12 +1,12 @@
 import { data } from '../../assets/data';
 
-export const formatMsToString = (s: number) => {
-    const ms = s % 1000;
-    s = (s - ms) / 1000;
-    const secs = s % 60;
-    s = (s - secs) / 60;
-    const mins = s % 60;
-    const hrs = (s - mins) / 60;
+export const formatMsToString = (time: number) => {
+    const ms = time % 1000;
+    time = (time - ms) / 1000;
+    const secs = time % 60;
+    time = (time - secs) / 60;
+    const mins = time % 60;
+    const hrs = (time - mins) / 60;
 
     return `${formatTime(hrs)}:${formatTime(mins)}:${formatTime(secs)}`;
   };

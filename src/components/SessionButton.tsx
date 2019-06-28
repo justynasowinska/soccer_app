@@ -1,10 +1,11 @@
 import * as React from 'react';
 import { Button } from 'react-native-elements';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, ViewStyle } from 'react-native';
 
 interface PropsType {
     isPaused: boolean;
     onPress: () => void;
+    containerStyles: ViewStyle;
 }
 
 export const SessionButton = (props: PropsType) => {
@@ -12,13 +13,13 @@ export const SessionButton = (props: PropsType) => {
         return isPaused ? 'Run Session' : 'Pause Session';
     };
 
-    const { isPaused, onPress } = props;
+    const { isPaused, onPress, containerStyles } = props;
 
     return (
         <Button
             title={getButtonTitle(isPaused)}
             onPress={onPress}
-            containerStyle={styles.buttonContainer}
+            containerStyle={[styles.buttonContainer, containerStyles]}
         />
     );
 };
@@ -26,6 +27,6 @@ export const SessionButton = (props: PropsType) => {
 const styles = StyleSheet.create({
     buttonContainer: {
         marginBottom: 10,
-        marginTop: 10
+        marginTop: 10,
     }
 });
