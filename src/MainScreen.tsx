@@ -21,6 +21,10 @@ export class MainScreen extends React.Component<{}, StateType> {
         sliderValue: 0
     };
 
+    componentWillUnmount() {
+        clearInterval(this.clearInterval);
+    }
+
     render() {
         const { isPaused, sliderValue, currentTime } = this.state;
 
