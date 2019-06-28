@@ -2,25 +2,28 @@ import * as React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import Slider from '@react-native-community/slider';
 
+import { formatMsToString } from '../utils/dataUtils';
+
 interface PropsType {
     currentTime: number;
-    summaryTime: number;
+    totalTime: number;
+    value: number;
     onValueChange: (value: number) => void;
 }
 
 export const SoccerSlider = (props: PropsType) => {
-    const { currentTime, summaryTime, onValueChange } = props;
+    const { currentTime, totalTime, onValueChange, value } = props;
 
     return (
         <View style={styles.container}>
-            <Text style={[styles.timeText, { left: 0 }]}>00:00:01</Text>
+            <Text style={[styles.timeText, { left: 0 }]}>{formatMsToString(currentTime)}</Text>
             <Slider
-                value={currentTime}
-                maximumValue={summaryTime}
+                maximumValue={totalTime}
                 minimumValue={0}
                 onValueChange={onValueChange}
+                value={value}
             />
-            <Text style={[styles.timeText, { right: 0 }]}>00:04:01</Text>
+            <Text style={[styles.timeText, { right: 0 }]}>{formatMsToString(totalTime)}</Text>
         </View>
     );
 };

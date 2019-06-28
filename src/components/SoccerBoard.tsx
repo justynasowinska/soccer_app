@@ -13,7 +13,7 @@ export const SoccerBoard = () => {
 
     const countPosY = (pos: number) => {
         return `${pos * 100}%`;
-    }
+    };
 
     return (
         <View style={styles.soccerBoardContainer}>

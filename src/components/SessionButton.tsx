@@ -9,7 +9,7 @@ interface PropsType {
 
 export const SessionButton = (props: PropsType) => {
     const getButtonTitle = (isPaused: boolean): string => {
-        return isPaused ? 'Start Session' : 'Pause Session';
+        return isPaused ? 'Run Session' : 'Pause Session';
     };
 
     const { isPaused, onPress } = props;

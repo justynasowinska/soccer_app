@@ -1,26 +1,28 @@
 import * as React from 'react';
-import { View, StyleSheet, Text, SafeAreaView } from 'react-native';
+import { View, StyleSheet, SafeAreaView } from 'react-native';
 import { SessionButton } from './components/SessionButton';
 import { SoccerBoard } from './components/SoccerBoard';
 import { SoccerSlider } from './components/SoccerSlider';
-
-interface PropTypes {
-    //
-}
+import { data } from '../assets/data';
 
 interface StateType {
     isPaused: boolean;
     currentTime: number;
+    sliderValue: number;
 }
 
-export class MainScreen extends React.Component<PropTypes, StateType> {
+const TIME_INTERVAL: number = data.interval;
+const TOTAL_TIME: number = data.player_positions.length * TIME_INTERVAL;
+
+export class MainScreen extends React.Component<{}, StateType> {
     state: StateType = {
         isPaused: true,
-        currentTime: 0
+        currentTime: 0,
+        sliderValue: 0
     };
 
     render() {
-        const { isPaused } = this.state;
+        const { isPaused, sliderValue } = this.state;
 
         return (
             <View style={styles.container}>
@@ -31,8 +33,9 @@ export class MainScreen extends React.Component<PropTypes, StateType> {
                     />
                     <SoccerBoard />
                     <SoccerSlider
-                        currentTime={10}
-                        summaryTime={50}
+                        value={sliderValue}
+                        currentTime={this.state.currentTime}
+                        totalTime={TOTAL_TIME}
                         onValueChange={this.onSliderValueChange}
                     />
                 </SafeAreaView>
