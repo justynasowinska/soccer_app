@@ -36,13 +36,15 @@ export const SoccerBoard = (props: PropsType) => {
 
 const styles = StyleSheet.create({
     soccerBoardContainer: {
-        width: '100%',
+        maxWidth: '100%',
         flex: 1,
         alignItems: 'center',
+        justifyContent: 'center',
+        aspectRatio: 2.2142286171,
     },
     imageBackground: {
         position: 'relative',
-        height: '100%',
+        width: '100%',
         aspectRatio: 2.2142286171,
     }
 });

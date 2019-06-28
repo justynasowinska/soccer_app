@@ -90,6 +90,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'space-between',
         alignItems: 'center',
+        padding: 40
     },
     buttonContainer: {
         alignSelf: 'flex-start',
