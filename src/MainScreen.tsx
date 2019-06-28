@@ -73,13 +73,17 @@ export class MainScreen extends React.Component<{}, StateType> {
 
     runTimer = () => {
         this.clearInterval = setInterval(() => {
-            const newTime = this.state.currentTime + 100;
+            const newTime = this.getNewTime(this.state.currentTime);
 
             this.setState({
                 currentTime: newTime,
                 sliderValue: newTime
             });
         }, 100);
+    }
+
+    getNewTime = (currentTime: number) => {
+        return currentTime + 100 > TOTAL_TIME ? 0 : currentTime + 100;
     }
 
     pauseTimer = () => {
