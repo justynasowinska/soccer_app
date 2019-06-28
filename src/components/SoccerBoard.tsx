@@ -1,11 +1,16 @@
 import * as React from 'react';
 import { View, ImageBackground, StyleSheet } from 'react-native';
+
 import { Player } from './Player';
+import { playersData } from '../utils/dataUtils';
 
-import { data } from '../../assets/data';
+interface PropsType {
+    currentTime: number;
+}
 
-export const SoccerBoard = () => {
-    const playerPostions = data.player_positions[0];
+export const SoccerBoard = (props: PropsType) => {
+    const playersIndex = Math.floor(props.currentTime / 100); // time interval
+    const playerPostions = playersData.player_positions[playersIndex];
 
     const countPosX = (pos: number) => {
         return `${pos * 100}%`;

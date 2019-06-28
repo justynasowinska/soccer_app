@@ -1,3 +1,5 @@
+import { data } from '../../assets/data';
+
 export const formatMsToString = (s: number) => {
     const ms = s % 1000;
     s = (s - ms) / 1000;
@@ -12,3 +14,12 @@ export const formatMsToString = (s: number) => {
   const formatTime = (time: number) => {
       return time < 10 ? `0${time}` : time;
   };
+
+const TIME_INTERVAL: number = data.interval;
+const TOTAL_TIME: number = (data.player_positions.length - 1) * TIME_INTERVAL;
+
+export {
+    data as playersData,
+    TIME_INTERVAL,
+    TOTAL_TIME
+};

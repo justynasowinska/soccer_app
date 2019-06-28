@@ -3,16 +3,13 @@ import { View, StyleSheet, SafeAreaView } from 'react-native';
 import { SessionButton } from './components/SessionButton';
 import { SoccerBoard } from './components/SoccerBoard';
 import { SoccerSlider } from './components/SoccerSlider';
-import { data } from '../assets/data';
+import { TOTAL_TIME } from './utils/dataUtils';
 
 interface StateType {
     isPaused: boolean;
     currentTime: number;
     sliderValue: number;
 }
-
-const TIME_INTERVAL: number = data.interval;
-const TOTAL_TIME: number = data.player_positions.length * TIME_INTERVAL;
 
 export class MainScreen extends React.Component<{}, StateType> {
     state: StateType = {
@@ -22,7 +19,7 @@ export class MainScreen extends React.Component<{}, StateType> {
     };
 
     render() {
-        const { isPaused, sliderValue } = this.state;
+        const { isPaused, sliderValue, currentTime } = this.state;
 
         return (
             <View style={styles.container}>
@@ -31,7 +28,7 @@ export class MainScreen extends React.Component<{}, StateType> {
                         isPaused={isPaused}
                         onPress={this.toggleSession}
                     />
-                    <SoccerBoard />
+                    <SoccerBoard currentTime={currentTime} />
                     <SoccerSlider
                         value={sliderValue}
                         currentTime={this.state.currentTime}
