@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, Animated } from 'react-native';
+import { colors } from '../utils/colors';
 
 interface PropsType {
     id: number;
@@ -26,7 +27,9 @@ export const Player = (props: PropsType) => {
     return (
         <Animated.View style={[styles.playerContainer, { left: leftPosition, bottom: bottomPostion }]}>
             <View style={styles.player}>
-                <Text style={styles.playerText}>{id}</Text>
+                <View style={styles.playerInner}>
+                    <Text style={styles.playerText}>{id}</Text>
+                </View>
             </View>
         </Animated.View>
     );
@@ -39,13 +42,22 @@ const styles = StyleSheet.create({
     player: {
         justifyContent: 'center',
         alignItems: 'center',
-        width: 30,
-        height: 30,
+        width: 35,
+        height: 35,
         borderRadius: 100,
-        backgroundColor: 'blue',
+        borderWidth: 1,
+        borderColor: colors.blue
+    },
+    playerInner: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 100,
+        width: '80%',
+        height: '80%',
+        backgroundColor: colors.blue,
     },
     playerText: {
-        fontSize: 12,
-        color: 'white'
+        fontSize: 14,
+        color: colors.mainLight
     }
 });

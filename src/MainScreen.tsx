@@ -4,6 +4,7 @@ import { SessionButton } from './components/SessionButton';
 import { SoccerBoard } from './components/SoccerBoard';
 import { SoccerSlider } from './components/SoccerSlider';
 import { TOTAL_TIME } from './utils/dataUtils';
+import { colors } from './utils/colors';
 
 interface StateType {
     isPaused: boolean;
@@ -85,6 +86,7 @@ export class MainScreen extends React.Component<{}, StateType> {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        backgroundColor: colors.mainDark
     },
     safeAreaContainer: {
         flex: 1,
