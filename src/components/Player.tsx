@@ -3,15 +3,15 @@ import { View, Text, StyleSheet } from 'react-native';
 
 interface PropsType {
     id: number;
-    x: number;
-    y: number;
+    x: string;
+    y: string;
 }
 
 export const Player = (props: PropsType) => {
     const { id, x, y } = props;
 
     return (
-        <View style={[styles.playerContainer, { top: x, left: y }]}>
+        <View style={[styles.playerContainer, { left: x, bottom: y }]}>
             <View style={styles.player}>
                 <Text style={styles.playerText}>{id}</Text>
             </View>
@@ -26,8 +26,8 @@ const styles = StyleSheet.create({
     player: {
         justifyContent: 'center',
         alignItems: 'center',
-        width: 50,
-        height: 50,
+        width: 30,
+        height: 30,
         borderRadius: 100,
         backgroundColor: 'blue',
     },
