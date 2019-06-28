@@ -1,5 +1,8 @@
 import { data } from '../../assets/data';
 
+const TIME_INTERVAL: number = data.interval;
+const TOTAL_TIME: number = (data.player_positions.length - 1) * TIME_INTERVAL;
+
 export const formatMsToString = (time: number): string => {
     const ms = time % 1000;
     time = (time - ms) / 1000;
@@ -15,11 +18,13 @@ export const formatTime = (time: number): string => {
       return time < 10 ? `0${time}` : `${time}`;
 };
 
-const TIME_INTERVAL: number = data.interval;
-const TOTAL_TIME: number = (data.player_positions.length - 1) * TIME_INTERVAL;
+export const getPlayerPositions = (currentTime: number): Array<any> => {
+    const playersIndex = Math.floor(currentTime / TIME_INTERVAL);
+
+    return data.player_positions[playersIndex];
+};
 
 export {
-    data as playersData,
     TIME_INTERVAL,
     TOTAL_TIME
 };

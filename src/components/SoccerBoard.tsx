@@ -2,16 +2,13 @@ import * as React from 'react';
 import { View, ImageBackground, StyleSheet } from 'react-native';
 
 import { Player } from './Player';
-import { playersData, TIME_INTERVAL } from '../utils/dataUtils';
+import { getPlayerPositions } from '../utils/dataUtils';
 
 interface PropsType {
     currentTime: number;
 }
 
 export const SoccerBoard = (props: PropsType) => {
-    const playersIndex = Math.floor(props.currentTime / TIME_INTERVAL);
-    const playerPostions = playersData.player_positions[playersIndex];
-
     return (
         <View style={styles.soccerBoardContainer}>
             <ImageBackground
@@ -19,7 +16,7 @@ export const SoccerBoard = (props: PropsType) => {
                 resizeMode="contain"
                 style={styles.imageBackground}
             >
-                { playerPostions.map(player => {
+                { getPlayerPositions(props.currentTime).map(player => {
                     return (
                         <Player
                             key={player[0]}
